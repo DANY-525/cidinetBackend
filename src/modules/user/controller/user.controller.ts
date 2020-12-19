@@ -8,17 +8,10 @@ constructor(private userService:UserService){
 
 
 }
-
-
 @Post()
 async create(@Body() newUser:any){
-
-
-
-
-    return newUser;
-
-
+    return await this.userService.create(newUser);
+    //return newUser;
 }
 
 

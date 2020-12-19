@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
+import { UserModule } from './modules/user/user.module';
 
 
 
@@ -15,9 +16,11 @@ import { Connection } from 'typeorm';
     username: 'root',
     //password: '',
     database: 'cidinet',
-    entities: [],
+    entities: ["dist/**/*.entity{.ts,.js}"],
     //synchronize: true,
-  }),],
+  }),UserModule
+
+   ],
   controllers: [AppController],
   providers: [AppService],
 })
